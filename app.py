@@ -35,6 +35,9 @@ def main():
                 print("Ошибка: год должен быть числом.")
 
         elif choice == "3":
+            for movie in movies:
+                watched_status = "Просмотрено" if movie['watched'] else "Не просмотрено"
+                print(f"{movie['id']}. {movie['title']} ({movie['year']}): {watched_status}")
             movie_id = input("Введите ID фильма для отметки как просмотренного: ")
             if movie_id.isdigit():
                 movie_id = int(movie_id)
@@ -45,6 +48,8 @@ def main():
                 print("Ошибка: ID должен быть числом.")
 
         elif choice == "4":
+            for movie in movies:
+                print(f"{movie['id']}. {movie['title']} ({movie['year']})")
             year = input("Введите год для поиска фильмов: ")
             if year.isdigit():
                 year = int(year)
